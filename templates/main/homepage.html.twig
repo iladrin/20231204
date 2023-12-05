@@ -4,4 +4,19 @@
 
 {% block body %}
     <h1>Accueil</h1>
+
+    <div>
+        <span>Message flash :</span>
+
+        <ul>
+            {% dump %}
+
+            {% for message in app.flashes('app') %}
+                <li>{{ message }}</li>
+            {% else %}
+                <li>Aucun message flash 😬</li>
+            {% endfor %}
+        </ul>
+
+    </div>
 {% endblock %}
