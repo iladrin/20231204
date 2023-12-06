@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Produits</h1>
+
+    <ul>
+        {% for product in products %}
+            <li>
+                <a href="{{ path('product_show', {'product': product.id}) }}">
+                    {{ product.name }} ({{ product.creationDate|format_datetime('full', 'short') }})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

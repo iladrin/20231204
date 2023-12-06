@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Fiche produit</h1>
+
+    <ul>
+        <li>{{ product.name }}</li>
+        <li>{{ product.description }}</li>
+        <li>{{ product.creationDate|format_datetime('full', 'short') }}</li>
+    </ul>
+
+    <div>
+        <a href="{{ path('product_list') }}">Retour aux produits</a>
+    </div>
+{% endblock %}
